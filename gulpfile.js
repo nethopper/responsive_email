@@ -1,17 +1,25 @@
 var gulp = require('gulp'),
     inlineCss = require('gulp-inline-css'),
     replace = require('gulp-replace'),
-    zip = require('gulp-zip');
+    zip = require('gulp-zip'),
+    nunjucks = require('gulp-nunjucks-render');
 
-gulp.task('inline', function() {
-  return gulp.src('./*.html')
+gulp.task('compile', function() {
+  nunjucks.nunjucks.configure(['.']);
+  return gulp.src('email.html')
+    .pipe(nunjucks())
+    .pipe(gulp.dest('merged'));
+})
+
+gulp.task('inline', ['compile'], function() {
+  return gulp.src('merged/*.html')
     .pipe(inlineCss({
       applyStyleTags: true,
       applyLinkTags: true,
       removeStyleTags: false,
       removeLinkTags: true
     }))
-    .pipe(gulp.dest('inlined/'));;
+    .pipe(gulp.dest('inlined/'));
 });
 
 gulp.task('make_zip', ['inline'], function() {
@@ -21,5 +29,5 @@ gulp.task('make_zip', ['inline'], function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('*.html', ['make_zip']);
+  gulp.watch(['*.html', 'snippets/*.html'], ['make_zip']);
 });
