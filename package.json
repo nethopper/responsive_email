@@ -13,5 +13,6 @@
     "gulp-inline-css": "~1.0.1",
     "gulp-replace": "~0.5.0",
     "gulp-zip": "~2.0.2"
-  }
+  },
+  "license": "MIT"
 }
