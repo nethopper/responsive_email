@@ -1,0 +1,17 @@
+{
+  "name": "email_base",
+  "version": "0.0.1",
+  "description": "Base template for building responsive emails. Includes tools to make the workflow smoother.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nethopper/responsive_email"
+  },
+  "private": true,
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-inline": "0.0.7",
+    "gulp-inline-css": "~1.0.1",
+    "gulp-replace": "~0.5.0",
+    "gulp-zip": "~2.0.2"
+  }
+}
