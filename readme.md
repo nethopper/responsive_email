@@ -22,5 +22,13 @@ The final output is packaged as a zip file together with images, to be easy to u
 
 ## Snippets
 
+### Header text on image
+Centers short, header-type text on top of an image. The image is set as a background image, except in Outlook '07+, where the text must be part of the image file.
+
+### Footer text on image
+Implements an element which can contain responsive text on top of a background image. The assumption is that we would like to make sure that part of the image is not obscured, while the rest can be. If the text does not fit next to the important part of the image, it drops below it.
+
+Supports clients which do not play well with background images, such as Outlook '07+. Where background-image is not supported, an image that contains the text should be used.
+
 ### Mailchimp required footer
 Contains the Mailchimp merge tags required by them and the CAN-SPAM Act in order for email to not be classified as spam. Mailchimp will append their own footer to your email if these tags are not present. For more information look [here](http://kb.mailchimp.com/campaigns/design/customize-the-footer).
