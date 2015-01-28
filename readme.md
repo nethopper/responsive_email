@@ -8,6 +8,13 @@ The `gulp watch` task looks for changes in all \*.html files in the root folder 
 3. minifies the HTML
 4. packages the result as a `.zip`.
 
+### Getting started
+
+1. Clone the repo
+2. Run `npm install` to install gulp and its required plugins
+3. Run `gulp`
+4. Start writing your email - the html files will be watched for changes and the email will be rebuilt on save.
+
 ### Nunjucks templates
 [Nunjucks](http://mozilla.github.io/nunjucks/) templates are used to make developing emails more modular and the emails themselves more maintainable. They provide handy functionality, such as variables, macros and include. For more information [read the docs](http://mozilla.github.io/nunjucks/templating.html).
 
